@@ -6,6 +6,7 @@ authors = ["Zakhar Koryagin <koryagin.03@bk.ru>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
+pydantic = "^1.10.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
