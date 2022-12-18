@@ -1,6 +1,11 @@
 from pydantic import BaseModel, validator, Field
 from datetime import datetime
-from typing import Optional
+from typing import Optional, Union
+
+
+class Conditions(BaseModel):
+    target: str
+    value: Union[str, int]
 
 
 class Header(BaseModel):
@@ -8,6 +13,7 @@ class Header(BaseModel):
     action_type: str
     from_dict: Optional[bool]
     data_type: str
+    conditions: Optional[list[Conditions]]
 
 
 class CommentsData(BaseModel):
