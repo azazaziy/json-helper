@@ -13,7 +13,7 @@ class Header(BaseModel):
     action_type: str
     from_dict: Optional[bool]
     data_type: str
-    conditions: Optional[list[Conditions]]
+    conditions: Optional[dict[Conditions]]
 
 
 class CommentsData(BaseModel):
