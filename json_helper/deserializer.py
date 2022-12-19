@@ -11,7 +11,8 @@ class Conditions(BaseModel):
 class Header(BaseModel):
     table: str
     action_type: str
-    from_dict: Optional[list[bool]]
+    from_dict: Optional[bool]
+    as_dict: Optional[bool]
     data_type: str
     conditions: Optional[list[Conditions]]
     fields: Optional[str]
