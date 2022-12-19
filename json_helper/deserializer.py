@@ -11,9 +11,10 @@ class Conditions(BaseModel):
 class Header(BaseModel):
     table: str
     action_type: str
-    from_dict: Optional[bool]
+    from_dict: Optional[list[bool]]
     data_type: str
     conditions: Optional[list[Conditions]]
+    fields: Optional[str]
 
     @validator('conditions')
     def conditions_to_dict(cls, v: list[Conditions]):
