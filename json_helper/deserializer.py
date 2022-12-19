@@ -13,7 +13,14 @@ class Header(BaseModel):
     action_type: str
     from_dict: Optional[bool]
     data_type: str
-    conditions: Optional[dict[Conditions]]
+    conditions: Optional[list[Conditions]]
+
+    @validator('conditions')
+    def conditions_to_dict(cls, v: list[Conditions]):
+        cond_dict = dict()
+        for item in v:
+            cond_dict[item.target] = item.value
+        return cond_dict
 
 
 class CommentsData(BaseModel):
